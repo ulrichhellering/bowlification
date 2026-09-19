@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Datenschutzerklärung – Bowlification</title>
+<meta name="description" content="Datenschutzerklärung der iOS-App Bowlification. Die App arbeitet vollständig offline und erhebt keine personenbezogenen Daten.">
+<style>
+  /*
+    Diese Seite lädt bewusst nichts nach: keine externen Schriften, keine Skripte,
+    keine Bilder von fremden Servern. Das eingebundene Laden von Google Fonts gilt
+    in Deutschland als Übermittlung der IP-Adresse an Google und wäre auf einer
+    Datenschutzseite ein Widerspruch in sich. Deshalb Systemschriften.
+  */
+  :root {
+    color-scheme: light dark;
+    --paper: #fcf7f0;
+    --panel: #fffdfa;
+    --ink: #1f1a17;
+    --muted: #6d6157;
+    --line: #e7dbcb;
+    --accent: #2f7d43;
+    --accent-soft: #e4efe3;
+    --flag-bg: #fdf0d5;
+    --flag-line: #e3c78a;
+    --flag-ink: #4d3b13;
+    --display: Georgia, "Iowan Old Style", "Times New Roman", serif;
+    --body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #1a1613;
+      --panel: #221e19;
+      --ink: #f3ece2;
+      --muted: #a99d90;
+      --line: #37302a;
+      --accent: #7ecb8c;
+      --accent-soft: #23301f;
+      --flag-bg: #2f2614;
+      --flag-line: #574722;
+      --flag-ink: #f0dfae;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-text-size-adjust: 100%;
+  }
+  .wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 56px 22px 96px;
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+  }
+
+  .masthead { display: flex; align-items: center; gap: 18px; }
+  .mark { flex: none; width: 62px; height: 62px; }
+  .masthead h1 {
+    font-family: var(--display);
+    font-size: clamp(28px, 6.2vw, 38px);
+    line-height: 1.15;
+    margin: 0;
+  }
+  .masthead .sub { margin: 4px 0 0; color: var(--muted); font-size: 15px; }
+
+  .flag {
+    background: var(--flag-bg);
+    border: 1px solid var(--flag-line);
+    color: var(--flag-ink);
+    border-radius: 12px;
+    padding: 14px 18px;
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  .summary {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 24px 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .summary h2 { font-family: var(--display); font-size: 21px; margin: 0; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border-radius: 999px;
+    padding: 5px 13px;
+  }
+
+  section { display: flex; flex-direction: column; gap: 12px; }
+  section > h2 {
+    font-family: var(--display);
+    font-size: 22px;
+    line-height: 1.25;
+    margin: 0;
+    padding-top: 22px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    gap: 12px;
+    align-items: baseline;
+  }
+  section > h2 .num {
+    font-family: var(--body);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+    flex: none;
+    min-width: 20px;
+  }
+  h3 { font-size: 16px; font-weight: 700; margin: 6px 0 -6px; }
+  p { margin: 0; }
+  ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+
+  address {
+    font-style: normal;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 16px 18px;
+    line-height: 1.7;
+  }
+
+  .table-scroll { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; font-size: 15px; min-width: 460px; }
+  caption {
+    text-align: left;
+    color: var(--muted);
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding-bottom: 10px;
+  }
+  th, td { text-align: left; padding: 9px 14px 9px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font-weight: 700; font-size: 13px; color: var(--muted); }
+  td:first-child { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 13.5px; white-space: nowrap; }
+  td:last-child, th:last-child { padding-right: 0; }
+  tbody tr:last-child td { border-bottom: none; }
+
+  footer {
+    border-top: 1px solid var(--line);
+    padding-top: 18px;
+    color: var(--muted);
+    font-size: 14px;
+  }
+</style>
+<style>
+  /* Die Verweise zwischen den drei Dokumenten. Das Impressum muss von jeder
+     Seite eines Netzangebots unmittelbar erreichbar sein. */
+  nav.pages { display: flex; flex-wrap: wrap; gap: 10px; }
+  nav.pages a {
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border-radius: 999px;
+    padding: 7px 15px;
+  }
+  nav.pages a[aria-current="page"] { color: var(--paper); background: var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <svg class="mark" viewBox="0 0 100 100" role="img" aria-label="Bowlification">
+      <circle cx="50" cy="50" r="36.3" fill="#fdfbf7" stroke="#e3d2bb" stroke-width="1.4"/>
+      <circle cx="50" cy="28.1" r="10" fill="#4f8f3c"/>
+      <circle cx="68.97" cy="39.05" r="10" fill="#e07b2c"/>
+      <circle cx="68.97" cy="60.95" r="10" fill="#96366f"/>
+      <circle cx="50" cy="71.9" r="10" fill="#c93b2e"/>
+      <circle cx="31.03" cy="60.95" r="10" fill="#9fc24a"/>
+      <circle cx="31.03" cy="39.05" r="10" fill="#eadbc0"/>
+      <circle cx="50" cy="50" r="10" fill="#e5c08f"/>
+    </svg>
+    <div>
+      <h1>Datenschutzerklärung</h1>
+      <p class="sub">Bowlification für iPhone · Stand 19. September 2026</p>
+    </div>
+  </header>
+
+  <nav class="pages">
+    <a href="./">Start</a>
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html" aria-current="page">Datenschutzerklärung</a>
+  </nav>
+
+  <div class="summary">
+    <h2>Kurz gesagt</h2>
+    <p>Bowlification arbeitet vollständig auf deinem iPhone. Die App stellt keine Verbindung
+    ins Internet her, erhebt keine personenbezogenen Daten und übermittelt nichts an den
+    Entwickler oder an Dritte.</p>
+    <div class="chips">
+      <span class="chip">Kein Konto</span>
+      <span class="chip">Keine Werbung</span>
+      <span class="chip">Kein Tracking</span>
+      <span class="chip">Keine Berechtigungen</span>
+      <span class="chip">Funktioniert im Flugmodus</span>
+    </div>
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>Verantwortlicher</h2>
+    <p>Verantwortlich für die Datenverarbeitung im Sinne der Datenschutz-Grundverordnung (DSGVO):</p>
+    <address>
+      Ulrich Hellering<br>
+      Schloßweg 11<br>
+      33790 Halle (Westf.)<br>
+      Deutschland<br>
+      E-Mail: <a href="mailto:uli2017@gmx.de">uli2017@gmx.de</a>
+    </address>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>Welche Daten die App speichert</h2>
+    <p>Alle folgenden Daten bleiben ausschließlich im geschützten Speicherbereich der App auf
+    deinem Gerät. Weder der Entwickler noch andere Apps können darauf zugreifen.</p>
+
+    <h3>Deine Bowls</h3>
+    <p>Sobald du eine fertige Bowl ansiehst, legt die App sie im Verlauf ab. Er umfasst die
+    letzten dreißig Bowls sowie alle Favoriten. Je Bowl wird genau das gespeichert:</p>
+
+    <div class="table-scroll">
+      <table>
+        <caption>Inhalt eines Eintrags</caption>
+        <thead>
+          <tr><th>Feld</th><th>Bedeutung</th><th>Beispiel</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>name</td><td>Erzeugter Name</td><td>Spicy-Ginger-Bowl mit Edamame und Pak Choi</td></tr>
+          <tr><td>kind</td><td>Bowl-Art</td><td>savory</td></tr>
+          <tr><td>ingredientIDs</td><td>Gewählte Zutaten</td><td>brokkoli, edamame, quinoa …</td></tr>
+          <tr><td>createdAt</td><td>Zeitpunkt</td><td>2026-09-07T18:12:04Z</td></tr>
+          <tr><td>isFavorite</td><td>Herz gesetzt</td><td>true</td></tr>
+          <tr><td>id</td><td>Zufällige Kennung</td><td>6F2A1C90-…</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Dein Vorrat</h3>
+    <p>In der Liste der 70 Zutaten kannst du markieren, welche dir gerade fehlen. Gespeichert
+    wird allein die Liste dieser Zutaten, damit die Auswahl sie ausgrauen und eine
+    Einkaufsliste daraus erzeugen kann.</p>
+
+    <h3>Zwei Einstellungen</h3>
+    <p>Die App merkt sich, wie oft sie dir den Hinweis auf das Gedrückthalten einer Zutat
+    gezeigt hat, damit er nach zweimaligem Anzeigen verschwindet. Es handelt sich um zwei
+    Zahlen ohne Personenbezug.</p>
+
+    <p>Diese Daten enthalten keine Angaben zu deiner Person, deinem Gerät oder deinem Standort.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>Keine Internetverbindung</h2>
+    <p>Die App enthält keinen Programmcode für Netzwerkverbindungen. Sie lädt nichts nach,
+    meldet nichts zurück und funktioniert vollständig im Flugmodus. Es kommen keine
+    Analysedienste, keine Werbenetzwerke, keine Absturzberichte an Dritte und keine
+    Werbe-Identifikatoren zum Einsatz.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>Keine Berechtigungen</h2>
+    <p>Die App fragt keine Systemberechtigungen ab. Sie greift nicht auf Kamera, Fotos,
+    Mikrofon, Standort, Kontakte, Kalender, Gesundheitsdaten oder Mitteilungen zu.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">5</span>Teilen und Sichern</h2>
+    <h3>Teilen</h3>
+    <p>Wenn du auf der fertigen Bowl „Teilen“ antippst, erzeugt die App ein Bild deiner Bowl
+    und übergibt es an das iOS-Teilen-Menü. Erst deine Auswahl in diesem Menü entscheidet,
+    wohin das Bild geht, etwa in die Fotos-App, in eine Nachricht oder an eine andere App.
+    Ab diesem Moment gilt die Datenschutzerklärung des jeweiligen Anbieters. Ohne dein
+    aktives Zutun verlässt nichts das Gerät.</p>
+    <h3>Sichern</h3>
+    <p>Über „Lieblingsbowls“ kannst du deinen Verlauf als JSON-Datei sichern. Auch hier bestimmst
+    allein du im Teilen-Menü, wo die Datei landet.</p>
+    <h3>Laden</h3>
+    <p>Beim Laden einer gesicherten Datei öffnet iOS die systemeigene Dateiauswahl. Die App
+    erhält ausschließlich Zugriff auf die eine Datei, die du auswählst.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">6</span>Datensicherung deines Geräts</h2>
+    <p>Wenn du dein iPhone über iCloud oder über einen Computer sicherst, sind die lokalen
+    Daten der App Teil dieser Sicherung. Diese Verarbeitung erfolgt durch Apple und richtet
+    sich nach deinen Backup-Einstellungen sowie der
+    <a href="https://www.apple.com/legal/privacy/de-ww/">Datenschutzrichtlinie von Apple</a>.
+    Der Entwickler hat auf diese Sicherungen keinen Zugriff.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">7</span>Bezug über den App Store</h2>
+    <p>Der Kauf und der Download der App laufen über den App Store und damit über Apple. Apple
+    verarbeitet dabei die für den Kaufvorgang nötigen Daten in eigener Verantwortung. Der
+    Entwickler erhält von Apple lediglich zusammengefasste, nicht personenbezogene
+    Auswertungen, etwa die Anzahl der Downloads. Einzelne Nutzerinnen und Nutzer sind darin
+    nicht erkennbar. Es gelten die Datenschutzbestimmungen von Apple.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">8</span>Rechtsgrundlage</h2>
+    <p>Da die App keine personenbezogenen Daten an den Entwickler übermittelt, findet auf
+    seiner Seite keine Verarbeitung personenbezogener Daten statt. Die Speicherung deiner
+    Bowls auf dem Gerät dient allein der Bereitstellung der von dir gewünschten Funktionen
+    und damit der Erfüllung des Nutzungsvertrags nach Artikel 6 Absatz 1 Buchstabe b DSGVO.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">9</span>Speicherdauer und Löschung</h2>
+    <p>Die lokalen Daten bleiben so lange erhalten, bis du sie löschst. Du hast dafür zwei Wege:</p>
+    <ul>
+      <li>Einzelne Bowls entfernst du in „Lieblingsbowls“, indem du den Eintrag nach links wischst.</li>
+      <li>Alle Daten der App entfernst du, indem du die App vom Gerät löschst. Dabei wird der
+      gesamte Datenbereich der App mitentfernt.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="num">10</span>Deine Rechte</h2>
+    <p>Nach der DSGVO stehen dir gegenüber dem Verantwortlichen die Rechte auf Auskunft
+    (Artikel 15), Berichtigung (Artikel 16), Löschung (Artikel 17), Einschränkung der
+    Verarbeitung (Artikel 18), Datenübertragbarkeit (Artikel 20) und Widerspruch
+    (Artikel 21) zu. Außerdem kannst du dich bei einer Datenschutz-Aufsichtsbehörde beschweren.</p>
+    <p>In der Praxis liegen dem Entwickler keine Daten über dich vor, sodass er dich weder
+    identifizieren noch Auskunft über gespeicherte Daten erteilen kann. Sämtliche Daten der
+    App befinden sich auf deinem Gerät. Du kannst sie dort jederzeit einsehen, über die
+    Funktion „Sichern“ ausleiten und wie unter Punkt 9 beschrieben löschen.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">11</span>Kinder</h2>
+    <p>Die App richtet sich nicht gezielt an Kinder und erhebt von niemandem Daten, unabhängig
+    vom Alter.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">12</span>Änderungen dieser Erklärung</h2>
+    <p>Sollte sich der Funktionsumfang der App ändern, wird diese Erklärung angepasst. Das
+    Datum im Kopf der Seite gibt den aktuellen Stand an.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">13</span>Kontakt</h2>
+    <p>Bei Fragen zum Datenschutz erreichst du den Verantwortlichen unter der oben genannten
+    E-Mail-Adresse.</p>
+  </section>
+
+  <footer>
+    Passend zu dieser Erklärung ist in App Store Connect unter „App-Datenschutz“ die Antwort
+    „Es werden keine Daten erfasst“ zu wählen.
+  </footer>
+
+</div>
+</body>
+</html>
